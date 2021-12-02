@@ -1,3 +1,4 @@
+const { stdin } = require("process");
 
 const setupInput = function (conn) {
   connection = conn;
@@ -36,6 +37,10 @@ const handleUserInput = function (key) {
   if (key === '\u0064') {
     console.log("Move: right");
     connection.write("Move: right");
+  }
+  if (key === '\u0063') {
+    console.log('message: hi');
+    connection.write("Say: hi");
   }
 }
 
