@@ -77,16 +77,6 @@ const connect = function () {
 
 console.log("Connecting ...")
 
-// let count = 0;
-// const moveL = (c) => {
-//   conn.write('Move: left')
-//   c++;
-//   if (c === 5) {
-//     clearInterval(this);
-//   }
-// }
-
-
 module.exports = {
   net,
   connect
