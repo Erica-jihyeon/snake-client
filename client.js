@@ -7,9 +7,9 @@ const connect = function () {
     port: 50541
   });
 
-  conn.on('connect', () => {
-    console.log('Successfully connected to game server');
-  })
+  //conn.on('connect', () => {
+  //  console.log('Successfully connected to game server');
+  //})
 
   conn.setEncoding("utf8");
 
@@ -18,18 +18,26 @@ const connect = function () {
     conn.write('Name: ER2');
   })
 
-  conn.on('connect', () => {
-    setTimeout(() => {
-      conn.write('Move: up')
-    }, 1000);
-  })
+  // conn.on('connect', () => {
+  //   setTimeout(() => {
+  //     conn.write('Move: up')
+  //   }, 1000);
+  // })
 
   conn.on("data", (data) => {
     console.log(data);
   })
 
   //conn is the object === net.Soket
-  //return conn;
+  return conn;
+}
+
+console.log("Connecting ...")
+
+module.exports = {
+  net,
+  connect
+};
 
   /*let count = 0;
 
@@ -73,13 +81,4 @@ const connect = function () {
   const tId2 = setInterval(moveD, 300, 5);
   const tId3 = setInterval(moveR, 300, 5);
   const tId4 = setInterval(moveU, 300, 5);*/
-}
-
-console.log("Connecting ...")
-
-module.exports = {
-  net,
-  connect
-};
-
 
